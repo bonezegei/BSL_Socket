@@ -44,7 +44,7 @@ while(1){
 
         var BODY =   "<!DOCTYPE html>"                   
                     +"<html>"
-                    +"<head><title>My C Server</title></head>"
+                    +"<head><title>BSL Socket Server</title></head>"
                     +"<body>"
                     +"<h1>Hello from BSL HTTP Server </h1>"
                     +"<p>Your browser just spoke to a custom BSL_Socket  server.</p>"
