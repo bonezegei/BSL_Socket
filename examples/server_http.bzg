@@ -1,0 +1,63 @@
+/*
+    HTTP Live Server (Procedural)
+    Author: Jofel Batutay (Boenzegei)
+    Date: April 17, 2026
+*/
+
+// include the library after Installation (" bzg install socket ")
+include("lib/socket.bzg");
+
+// 1. Init 
+if (socket_init() <0){
+    print("Socket Failed");
+}
+else{
+    print("Socket Ready");
+}
+
+// 2. Create
+var server = socket_create(); 
+if(server < 0 ){
+    print("Socket Creation Failed");
+}
+
+// 3. Bind Server will be at port 8080
+if (socket_bind(server, 0, 8080) < 0) {
+    print("Socket Bind failed.");
+}
+
+// 4. Listen
+if (socket_listen(server, 5) < 0) {
+    print("socket_listen() failed.");
+}
+
+while(1){
+    
+    // 5. Accept
+    var data = socket_read(client, 1024);
+        
+    if ( sizeof(data) >= 0) {
+        print("Received: " + data);
+
+        var BODY =   "<!DOCTYPE html>"                   
+                    +"<html>"
+                    +"<head><title>My C Server</title></head>"
+                    +"<body>"
+                    +"<h1>Hello from BSL HTTP Server </h1>"
+                    +"<p>Your browser just spoke to a custom BSL_Socket  server.</p>"
+                    +"</body>"
+                    +"</html>";
+
+        var HTTP =  "HTTP/1.1 200 OK\r\n"                
+                    +"Content-Type: text/html\r\n"       
+                    +"Content-Length: "+ sizeof(BODY)+"\r\n"    
+                    +"Connection: close\r\n"
+                    +"\r\n";                           
+
+        socket_write(client, HTTP+BODY, sizeof(HTTP+BODY));
+
+        print(HTTP+BODY);
+    }
+}    
+
+socket_cleanup();
