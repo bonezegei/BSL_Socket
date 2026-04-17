@@ -1,0 +1,3 @@
+{
+ "init_socket", "cleanup_socket", "socket_create", "socket_bind", "socket_listen", "socket_accept", "socket_connect", "socket_read", "socket_write"
+}
