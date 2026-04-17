@@ -34,6 +34,9 @@ if (socket_listen(server, 5) < 0) {
 while(1){
 
     // 5. Accept
+    var client = socket_accept(server);
+    print("Client connected!\n");
+    
     var data = socket_read(client, 1024);
         
     if ( sizeof(data) >= 0) {
