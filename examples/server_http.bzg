@@ -32,7 +32,7 @@ if (socket_listen(server, 5) < 0) {
 }
 
 while(1){
-    
+
     // 5. Accept
     var data = socket_read(client, 1024);
         
@@ -56,7 +56,7 @@ while(1){
 
         socket_write(client, HTTP+BODY, sizeof(HTTP+BODY));
 
-        print(HTTP+BODY);
+        print(HTTP + BODY);
     }
 }    
 

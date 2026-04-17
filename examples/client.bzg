@@ -1,1 +1,52 @@
+/*
+    Socket Client with (HTTP Request) (Procedural)
+    Author: Jofel Batutay (Boenzegei)
+    Date: April 17, 2026
+*/
 
+// include the library after Installation (" bzg install socket ")
+include("lib/socket.bzg");
+
+// 1. Initialize OS Socket Library
+if (socket_init() < 0) {
+    print("Failed to initialize sockets.");
+}
+
+// 2. Create the socket
+var client_socket = socket_create();
+if (client_socket<0) {
+    print("Failed to create socket.");
+    return 1;
+}
+
+// 3. Connect to the server
+if (socket_connect(client_socket, "127.0.0.1", 80) < 0) {
+    print("Connection failed! Is the server running?");
+    while(1){}
+}
+else{
+    print("Connected successfully!\n");
+}
+
+
+// 4. Send a basic HTTP GET request to the server
+var request = 
+    "GET /index.html HTTP/1.1\r\n"
+    +"Host: 127.0.0.1\r\n"
+    +"Connection: close\r\n"
+    +"\r\n"; // Blank line indicates end of request headers
+        
+socket_write(client_socket, request, sizeof(request));
+
+// 5. Read the server's response
+var data = socket_read(client_socket, 8192);
+    
+if (sizeof(data) > 0) {
+    print(data);
+} 
+else {
+    print("Server closed connection without sending data.\n");
+}
+
+// 6. Cleanup
+socket_cleanup();
