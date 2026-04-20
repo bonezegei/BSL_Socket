@@ -60,6 +60,8 @@ while(1){
         socket_write(client, HTTP+BODY, sizeof(HTTP+BODY));
 
         print(HTTP + BODY);
+        socket_close(client); //
+        gc();   // manual garbage collection
     }
 }    
 
