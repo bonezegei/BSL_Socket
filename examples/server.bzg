@@ -45,7 +45,11 @@ while(1){
             var message = "Hello from BSL server";
 
             socket_write(client,message, sizeof(message));
-        }
-    }    
+        
+        socket_close(client); //
+        gc();   // manual garbage collection
+    }
+    
+}    
 
 socket_cleanup();
