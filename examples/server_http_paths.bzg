@@ -1,6 +1,4 @@
 include("lib/socket.bzg");
-
-
 // 1. Init 
 if (socket_init() <0){
     print("Socket Failed");
@@ -35,10 +33,6 @@ while(1){
         
     if ( sizeof(data) >= 0) {
         //print("Received: " + data);
-
-
-
-
         var BODY =  "<!DOCTYPE html>"                   
                     +"<html>"
                     +"<head><title>BSL Socket Server</title></head>"
@@ -53,7 +47,6 @@ while(1){
                     +"Content-Length: "+ sizeof(BODY)+"\r\n"    
                     +"Connection: close\r\n"
                     +"\r\n";
-
 
         var match = regex("/.* HTTP/1.1", data);
         var path = substr(match, 0, sizeof(match) - 9);
