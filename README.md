@@ -11,6 +11,7 @@
   - [3. TCP Client (HTTP Request)](#3-tcp-client-http-request)
 - [API Reference](#api-reference)
 - [License & Author](#license--author)
+- [Citation](#citation)
 
 ## Installation
 
@@ -339,3 +340,12 @@ socket_cleanup();
 
 * **Author:** Jofel Batutay ([Bonezegei](https://github.com/bonezegei))
 * **Website:** [bonezegei.com](https://bonezegei.com)
+
+## Citation 
+[![DOI](https://zenodo.org/badge/1213086179.svg)](https://doi.org/10.5281/zenodo.22163475)
+
+If you use this library, please cite it as below:
+
+**APA Format:**
+
+Batutay, J. (2026). *bonezegei/BSL_Socket* [Computer software]. https://doi.org/10.5281/zenodo.22163475
