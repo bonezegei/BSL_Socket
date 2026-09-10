@@ -5,17 +5,47 @@
     "socket_init": {
       "info": "initialize socket",
       "params": "",
-      "req_params": 0,
+      "req_params": 0
     },
     "socket_create": {
       "info": "create the actual socket returns the socket value > 0 if successful",
       "params": "",
-      "req_params": 0,
+      "req_params": 0
     },
     "socket_bind": {
-      "info": "create the actual socket returns the socket value > 0 if successful",
+      "info": "Bind to port IP can be set to 0",
       "params": "socket, IP, port",
-      "req_params": 3,
+      "req_params": 3
     },
+    "socket_listen": {
+      "info": "listen ",
+      "params": "socket, backlog",
+      "req_params": 2
+    },
+    "socket_accept": {
+      "info": "accept client (returns client socket)",
+      "params": "socket",
+      "req_params": 1
+    },
+    "socket_read": {
+      "info": "read data from client",
+      "params": "client_socket, size of data to read",
+      "req_params": 2
+    },
+    "socket_write": {
+      "info": "write data to client",
+      "params": "client_socket, data, data_size",
+      "req_params": 3
+    },
+    "socket_close": {
+      "info": "close a socket",
+      "params": "socket",
+      "req_params": 1
+    },
+    "socket_cleanup();": {
+      "info": "clean the memory allocation for socket",
+      "params": "",
+      "req_params": 0
+    }
   }
 }
