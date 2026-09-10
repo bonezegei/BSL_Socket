@@ -1,1 +1,21 @@
-
+{
+  "name": "Socket",
+  "version": "1.0.1",
+  "functions": {
+    "socket_init": {
+      "info": "initialize socket",
+      "params": "",
+      "req_params": 0,
+    },
+    "socket_create": {
+      "info": "create the actual socket returns the socket value > 0 if successful",
+      "params": "",
+      "req_params": 0,
+    },
+    "socket_bind": {
+      "info": "create the actual socket returns the socket value > 0 if successful",
+      "params": "socket, IP, port",
+      "req_params": 3,
+    },
+  }
+}
