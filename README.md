@@ -244,7 +244,7 @@ if(server < 0 ){
 
 // 3. Bind Server will be at port 8080
 if (socket_bind(server, 0, 8080) < 0) {
-    print("Socket Bind failed.");
+    print("Socket Bind failed.");+
 }
 
 // 4. Listen
